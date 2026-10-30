@@ -2,9 +2,12 @@
   "name": "powerdepot-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index.js",
+    "dev": "nodemon --watch src --ext ts --exec node src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -13,19 +16,24 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/powerlineplus/powerdepot-backend/issues"
   },
   "homepage": "https://github.com/powerlineplus/powerdepot-backend#readme",
   "devDependencies": {
+    "@tsconfig/node22": "^22.0.6",
     "@types/express": "^5.0.6",
-    "@types/node": "^26.6.3",
+    "@types/node": "^26.6.6",
     "nodemon": "^3.1.14",
     "typescript": "^7.0.2"
   },
   "dependencies": {
     "dotenv": "^18.0.4",
-    "express": "^5.2.1"
-  }
+    "express": "^5.2.1",
+    "mysql2": "^3.24.6"
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
